@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 export function LolChampCard({ imagen, nombre, origen, lineas, roles, recurso, dificultad_uso }) {
-    console.log("Props recibidas:", { imagen, nombre, origen, lineas, roles, recurso, dificultad_uso });
+    console.log("Props recibidas en LolChampCard:", { imagen, nombre, origen, lineas, roles, recurso, dificultad_uso });
 
     return (
         <article className="lol-champ-card">
@@ -27,6 +27,7 @@ export function LolChampCard({ imagen, nombre, origen, lineas, roles, recurso, d
         </article>
     );
 }
+
 
 LolChampCard.propTypes = {
     imagen: PropTypes.string,
