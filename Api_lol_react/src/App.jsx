@@ -1,44 +1,21 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { LolChampCard } from "./LolChampCard.jsx";
-import { useState, useEffect } from "react";
+import { NavBar } from "./navBar.jsx";
+import { Inicio } from "./views/inicio.jsx";
+import { Champions } from "./views/campeones.jsx";
+import { Maps } from "./views/mapas.jsx";
 
-export function App() {
-  const [champions, setChampions] = useState([]);
-
-
-  useEffect(() => {
-    fetch("http://localhost:3000/api/champions")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Datos recibidos:", data);
-        setChampions(data.champs || []); // Asegúrate de asignar data.champs al estado
-      })
-      .catch((error) => console.error("Error al obtener datos:", error));
-  }, []);
-
+export default function App() {
   return (
-    <div>
-      <h1>Lista de Campeones</h1>
-     
-
-      <div className="lol-champs-container" style={{ display: 'flex', flexWrap: 'wrap' }}>
-  {Array.isArray(champions) && champions.length > 0 ? (
-    champions.map((champ) => (
-      <LolChampCard
-      key={champ.id || champ._id}
-        imagen={champ.imagen}
-        nombre={champ.nombre}
-        origen={champ.origen}
-        lineas={champ.lineas.join(', ')} // Convierte el array en una cadena
-        roles={champ.roles.join(', ')} // Convierte el array en una cadena
-        recurso={champ.recurso}
-        dificultad_uso={champ.dificultad_uso}
-      />
-    ))
-  ) : (
-    <p>Cargando campeones o no hay datos disponibles...</p>
-  )}
-</div>
-    </div>
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <NavBar />
+      <Routes>
+        <Route path="/inicio" element={<Inicio />} />
+        <Route path="/campeones" element={<Champions />} />
+        <Route path="/mapas" element={<Maps />} />
+      </Routes>
+    </Router>
   );
 }
+
+export { App };
