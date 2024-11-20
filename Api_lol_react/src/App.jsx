@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./App.css";
-import { NavBar } from "./navBar.jsx";
+import "./App.scss";
+import { NavBar } from "./components/NavBar.jsx";
 import { Inicio } from "./views/inicio.jsx";
 import { Champions } from "./views/campeones.jsx";
 import { Maps } from "./views/mapas.jsx";

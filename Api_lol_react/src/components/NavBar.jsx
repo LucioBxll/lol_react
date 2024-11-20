@@ -1,3 +1,6 @@
+// Importa App.scss si es necesario para estilos globales
+// import '../App.scss'; // Asegúrate de que la ruta sea correcta
+
 export function NavBar() {
   return (
     <nav className="lol-navBar">

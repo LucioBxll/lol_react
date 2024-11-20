@@ -1,4 +1,4 @@
-import { LolChampCard } from "../LolChampCard.jsx";
+import { LolChampCardComponent } from "../components/LolChampCard.jsx";
 import { useState, useEffect } from "react";
 
 export function Inicio() {
@@ -22,7 +22,7 @@ export function Inicio() {
           champions
             .filter(champ => champ.nombre && champ.imagen)
             .map((champ) => (
-              <LolChampCard
+              <LolChampCardComponent
                 key={champ.id || champ._id}
                 imagen={champ.imagen}
                 nombre={champ.nombre}
