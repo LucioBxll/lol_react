@@ -9,7 +9,7 @@ export function NavBar() {
         <li><a className="lol-navBar-item" href="/inicio">Inicio</a></li>
         <li><a className="lol-navBar-item" href="/campeones">Campeones</a></li>
         <li><a className="lol-navBar-item" href="/mapas">Mapas</a></li>
-        <li><a className="lol-navBar-item" href="/iniciarSesion">Iniciar Sesión</a></li>
+        <li><a className="lol-navBar-item" href="/iniciar-sesion">Iniciar Sesión</a></li>
       </ul>
     </nav>
   );
