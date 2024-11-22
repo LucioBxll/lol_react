@@ -5,6 +5,7 @@ import { Inicio } from "./views/inicio.jsx";
 import { Champions } from "./views/campeones.jsx";
 import { Maps } from "./views/mapas.jsx";
 import { IniciarSesion } from "./views/iniciarSesion.jsx";
+import { Registrar } from "./views/registrar.jsx";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/campeones" element={<Champions />} />
         <Route path="/mapas" element={<Maps />} />
         <Route path="/iniciar-sesion" element={<IniciarSesion />} />
+        <Route path="/registrar" element={<Registrar />} />
       </Routes>
     </Router>
   );

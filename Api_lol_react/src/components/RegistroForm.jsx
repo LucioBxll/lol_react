@@ -1,7 +1,6 @@
-// import React, { useState } from "react";
 import { useState } from "react";
 
-export default function LoginForm() {
+export default function RegistroForm() {
   const [formData, setFormData] = useState({
     username: "",
     password: ""
@@ -18,7 +17,7 @@ export default function LoginForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch('/api/register', { // Asegúrate de que esta ruta sea correcta
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -27,18 +26,18 @@ export default function LoginForm() {
       });
       const data = await response.json();
       console.log("Respuesta del servidor:", data);
-      // Aquí puedes manejar la respuesta, como guardar un token de sesión o redirigir al usuario
+      // Aquí puedes manejar la respuesta, como redirigir al usuario o mostrar un mensaje
     } catch (error) {
-      console.error("Error al iniciar sesión:", error);
+      console.error("Error al registrar:", error);
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="username">Usuario:</label>
+        <label htmlFor="username">Nombre de Usuario:</label>
         <input
-          type="username"
+          type="text"
           id="username"
           name="username"
           value={formData.username}
@@ -57,7 +56,7 @@ export default function LoginForm() {
           required
         />
       </div>
-      <button type="submit">Iniciar Sesión</button>
+      <button type="submit">Registrar</button>
     </form>
   );
-}   
+}
